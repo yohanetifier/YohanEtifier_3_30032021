@@ -1,0 +1,385 @@
+/* Variables */
+
+$color-primary: #9356DC; 
+$color-secondary: #FF79DA; 
+$color-tertiary: #99E2D0;
+$heading-size: 16px;
+$background-place: #EAECEE;
+$background-discovery: #F2F4F4; 
+$color-new: #1E8449; 
+
+/* Mixin */
+
+@mixin color-radial {
+    background: rgb(147,86,220);
+    background: linear-gradient(0deg, rgba(147,86,220,1) 31%, rgba(255,121,218,1) 100%);
+}
+@mixin restaurant-card-top-sizing {
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 20px; 
+}
+
+
+@mixin restaurant-card-sizing {
+    border-radius: 10px; 
+    height: 250px; 
+    width: 48%; 
+    margin-bottom: 20px; 
+    text-decoration: none; 
+    color: black; 
+    box-shadow: 5px 5px 5px 5px lightgrey; 
+}
+
+
+
+@mixin restaurant-card-image-sizing {
+    position: relative; 
+    display: flex; 
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+    height: 75%;
+    width: 100%;
+}
+
+@mixin restaurant-card-new-sizing{
+    position: absolute; 
+    color: #1E8449; 
+    top: 10px; 
+    right: 10px; 
+    padding: 5px; 
+    border-radius: 5px; 
+    background: $color-tertiary; 
+}
+
+@mixin restaurant-card-description-sizing {
+    display: flex; 
+    justify-content: space-between;
+    background-color: white; 
+    height: 25%; 
+    width: 100%; 
+    margin-top:0px;
+    border-bottom-left-radius: 20px; 
+    border-bottom-right-radius: 20px;
+}
+
+@mixin restaurant-card-place-sizing{
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    margin-bottom: 4px; 
+}
+
+@mixin margin-heart {
+    margin: 10px 10px 0px 0px; 
+}
+
+@mixin margin-placeandname {
+    margin: 10px 0px 0px 10px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", "Times New Roman",serif;
+}
+
+/* Header */
+header {
+    text-align: center; 
+
+}
+
+header img {
+    width: 20%; 
+}
+
+/* Place */
+
+
+.place {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #EAECEE;
+    height: 40px; 
+    &__input { 
+        margin-left: 20px; 
+        border:none; 
+        background-color: $background-place; 
+        &:focus { 
+            outline: 0; 
+        }
+    }
+    
+}
+
+/* Discovery  */
+
+.discovery {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 300px; 
+    margin: 0 auto; 
+    background: #F2F4F4; 
+    &__title {
+        text-align: center; 
+    }
+    &__paragraph{
+        text-align: center; 
+        margin-top: 10px;
+    }
+    &__button{
+        width: 220px;
+        height: 50px; 
+        border-radius: 30px; 
+        color: white; 
+        border: none; 
+        background: rgb(147,86,220);
+        background: linear-gradient(0deg, rgba(147,86,220,1) 31%, rgba(255,121,218,1) 100%);
+        box-shadow: 2px 2px 2px 2px #CCD1D1; 
+        cursor: pointer; 
+        &:focus { 
+            outline:0; 
+        } 
+    }
+}
+
+.step {
+    &__title {
+        text-align: center; 
+        margin-top: 50px; 
+    }
+    &__container {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: space-around; 
+        margin-top: 30px; 
+        &__step { 
+            display: flex; 
+            margin-bottom: 30px; 
+            background: #F2F4F4; 
+            padding: 20px 40px;  
+            border-radius: 20px; 
+            position: relative; 
+            &__number{ 
+                position: relative; 
+                right: 50px;
+                bottom: 2px;
+                color: white; 
+                background: $color-primary; 
+                border-radius: 50%; 
+                padding: 2px 7px 2px 7px;    
+            }
+            &__icone{
+                position: relative; 
+                right: 20px;
+                color: #808B96; 
+            }
+        }
+    }
+}
+
+/* Restaurant */
+
+.restaurant{
+    background: $background-discovery; 
+    height: 650px;
+    &__sectiontitle {
+        padding: 30px 0px 10px 20px; 
+        margin-top: 20px; 
+        margin-bottom: 20px;
+    }  
+    &__card{
+        display: flex; 
+        flex-direction: column;
+        margin: 0px 20px;  
+        border-radius: 20px;
+        &__top {
+            @include restaurant-card-top-sizing;
+            &__one{
+               @include restaurant-card-sizing; 
+                &__image {
+                    @include restaurant-card-image-sizing; 
+                    background: url("../../Maquettes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") center no-repeat;
+                    background-size: cover; 
+                    &__new {
+                        @include restaurant-card-new-sizing; 
+                    } 
+                }
+                &__description {
+                    @include restaurant-card-description-sizing;
+                    &__placeandname {
+                        margin: 10px 0px 0px 10px; 
+                        &__place{
+                            @include restaurant-card-place-sizing;
+                        }
+                    } 
+                    &__heart {
+                        @include margin-heart; 
+                         
+                    }
+                }
+            }
+            &__second{
+                @include restaurant-card-sizing; 
+                &__image {
+                    @include restaurant-card-image-sizing; 
+                    background: url("../../Maquettes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") center no-repeat; 
+                    background-size: cover; 
+                    &__new {
+                        @include restaurant-card-new-sizing; 
+                    }
+                }
+                &__description{
+                    @include restaurant-card-description-sizing; 
+                    &__placeandname{
+                        margin: 10px 0px 0px 10px;
+                        &__place {
+                            @include restaurant-card-place-sizing; 
+                        } 
+                        }
+                        &__heart {
+                            @include margin-heart; 
+                    }
+
+                }
+
+            }
+        }
+           &__bottom {
+               @include restaurant-card-top-sizing;
+               &__one {
+                   @include restaurant-card-sizing; 
+                   &__image {
+                       @include restaurant_card_image-sizing;
+                       background: url("../../Maquettes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") center no-repeat;
+                       background-size: cover;
+                       
+                   }
+                   &__description {
+                       @include restaurant-card-description-sizing; 
+                       &__placeandname {
+                           @include margin-placeandname; 
+                           &__place {
+                               @include restaurant-card-place-sizing;
+                           }
+                       }
+                       &__heart {
+                           @include margin-heart; 
+                       }
+                   }
+               } 
+               &__second {
+                @include restaurant-card-sizing; 
+                &__image {
+                    @include restaurant_card_image-sizing;
+                    background: url("../../Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") center no-repeat;
+                    background-size: cover;
+                
+                }
+                &__description {
+                    @include restaurant-card-description-sizing; 
+                    &__placeandname {
+                        @include margin-placeandname; 
+                        &__place {
+                            @include restaurant-card-place-sizing;
+                        }
+                    }
+                    &__heart {
+                        @include margin-heart; 
+                    }
+                }
+                   
+               }
+
+           }
+        }
+
+    }
+
+    /* footer  */
+
+
+    footer {
+        height: 300px; 
+        background-color:#626567; 
+        & img{
+        filter: invert(100%); 
+        width: 120px; 
+        margin: 20px 0px 20px 20px;
+        }
+        & ul {
+            color: white;
+        margin: 20px 0px 20px 20px;
+        list-style-type: none; 
+        & li {
+            margin-bottom: 10px; 
+        }
+        & i {
+            margin-right: 5px; 
+        }
+        }
+        & a {
+            text-decoration: none; 
+            color: white; 
+
+        }
+    }
+
+
+    /* Menu la palette du goût */
+
+/* Header */
+.header{
+    display: flex; 
+    justify-content: center; 
+    position: relative;
+    margin-bottom: 20px; 
+    & i {
+        display:flex; 
+        position: absolute; 
+        left: 50px; 
+        height: 100%; 
+        align-items: center; 
+    }
+    & img {
+        width: 150px; 
+    }
+}
+
+/* banner */
+
+.banner {
+    width: 100%; 
+    height: 600px; 
+    background: url("../../Maquettes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg")center no-repeat; 
+    background-size: cover;  
+}
+
+/* Carte la palette du goût */
+
+.menu {
+    position: relative; 
+    bottom: 100px; 
+    height: 500px; 
+    background: $background-place; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+    &__titleheart{
+    display: flex; 
+    justify-content: space-between; 
+    &__title {
+        width: 50%; 
+    }
+}
+}
+
+
+
+
+
+
