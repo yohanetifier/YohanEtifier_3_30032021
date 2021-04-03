@@ -7,12 +7,13 @@ $heading-size: 16px;
 $background-place: #EAECEE;
 $background-discovery: #F2F4F4; 
 $color-new: #1E8449; 
+$background-button: lighten(rgb(147,86,220), 5%);
 
 /* Mixin */
 
 @mixin color-radial {
     background: rgb(147,86,220);
-    background: linear-gradient(0deg, rgba(147,86,220,1) 31%, rgba(255,121,218,1) 100%);
+    background: linear-gradient(0deg, rgba(147,86,220,0.99) 31%, rgba(255,121,218,0.99) 100%);
 }
 @mixin restaurant-card-top-sizing {
     width: 100%; 
@@ -25,7 +26,7 @@ $color-new: #1E8449;
 @mixin restaurant-card-sizing {
     border-radius: 10px; 
     height: 250px; 
-    width: 48%; 
+    width: 600px; 
     margin-bottom: 20px; 
     text-decoration: none; 
     color: black; 
@@ -98,7 +99,7 @@ header {
 }
 
 header img {
-    width: 15%; 
+    width: 200px; 
 }
 
 /* Place */
@@ -141,6 +142,7 @@ header img {
     &__button{
         width: 220px;
         height: 50px; 
+        font-size: 1rem; 
         border-radius: 30px; 
         color: white; 
         border: none; 
@@ -194,6 +196,9 @@ header img {
 .restaurant{
     background: $background-discovery; 
     height: 650px;
+    @media (max-width: 1200px){
+        height: 1200px; 
+    }
     &__sectiontitle {
         padding: 30px 0px 10px 20px; 
         margin-top: 20px; 
@@ -206,8 +211,12 @@ header img {
         border-radius: 20px;
         &__top {
             @include restaurant-card-top-sizing;
+            flex-wrap: wrap; 
             &__one{
-               @include restaurant-card-sizing; 
+               @include restaurant-card-sizing;
+               @media (max-width: 1200px){
+                   width: 100%;
+               }
                 &__image {
                     @include restaurant-card-image-sizing; 
                     background: url("../../Maquettes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") center no-repeat;
@@ -226,12 +235,42 @@ header img {
                     } 
                     &__heart {
                         @include margin-heart; 
-                         
+                        border: 2px solid red; 
+                        background: white; 
+                        border: none; 
+                        width: 50px; 
+                        display: flex; 
+                        justify-content: center; 
+                        align-items: center; 
+                        cursor: pointer; 
+                        &__one {
+                            position: relative; 
+                            &__two {
+                                position: absolute; 
+                                top: 0px;
+                                right: 0px; 
+                                left: 0px; 
+                                bottom: 0px; 
+                                color: $color-primary; 
+                                opacity: 0; 
+                                transition: opacity 500ms ease-in-out; 
+                            }
+                            
+                        }   
+                        &:hover > .restaurant__card__top__one__description__heart__one > .restaurant__card__top__one__description__heart__one__two{
+                            opacity: 1; 
+                        } 
+                        &:hover > .restaurant__card__top__one__description__heart__one{
+                            color: $color-primary;
+                        }
                     }
                 }
             }
             &__second{
-                @include restaurant-card-sizing; 
+                @include restaurant-card-sizing;
+                @media (max-width: 1200px){
+                    width: 100%;
+                }
                 &__image {
                     @include restaurant-card-image-sizing; 
                     background: url("../../Maquettes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") center no-repeat; 
@@ -258,8 +297,12 @@ header img {
         }
            &__bottom {
                @include restaurant-card-top-sizing;
+               flex-wrap: wrap;  
                &__one {
-                   @include restaurant-card-sizing; 
+                   @include restaurant-card-sizing;
+                   @media (max-width: 1200px){
+                    width: 100%;
+                }
                    &__image {
                        @include restaurant_card_image-sizing;
                        background: url("../../Maquettes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") center no-repeat;
@@ -281,6 +324,9 @@ header img {
                } 
                &__second {
                 @include restaurant-card-sizing; 
+                @media (max-width: 1200px){
+                    width: 100%;
+                }
                 &__image {
                     @include restaurant_card_image-sizing;
                     background: url("../../Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") center no-repeat;
@@ -314,14 +360,14 @@ header img {
         height: 300px; 
         background-color:#626567; 
         & img{
-        filter: invert(100%); 
-        width: 120px; 
-        margin: 20px 0px 20px 20px;
+            filter: invert(100%); 
+            width: 120px; 
+            margin: 20px 0px 20px 20px;
         }
         & ul {
             color: white;
-        margin: 20px 0px 20px 20px;
-        list-style-type: none; 
+            margin: 20px 0px 20px 20px;
+            list-style-type: none; 
         & li {
             margin-bottom: 10px; 
         }
@@ -384,28 +430,78 @@ header img {
     background: $background-place; 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    @media (max-width: 1000px) {
+        height: 1400px;  
+    }
+    &__longerformobile{
+        @media (max-width: 1000px){
+            height: 1600px; 
+        }
+    }
     &__restaurant {
         display: flex; 
         justify-content: space-between; 
-        margin: 5px 20px 20px 30px;  
+        margin: 5px 20px 20px 30px; 
         &__title {
             font-family: "Shrikhand", cursive; 
             font-size: 2rem; 
             font-weight: bold;
             font-style: italic;
         }
+        &__heart {
+            background: $background-place;  
+            border: none; 
+            width: 50px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            cursor: pointer; 
+            &__one {
+                position: relative; 
+                &__two {
+                    position: absolute; 
+                    top: 0px;
+                    right: 0px; 
+                    left: 0px; 
+                    bottom: 0px; 
+                    color: $color-primary; 
+                    opacity: 0; 
+                    transition: opacity 500ms ease-in-out; 
+                    }
+                            
+                        }   
+                        &:hover > .menu__restaurant__heart__one > .menu__restaurant__heart__one__two{
+                            opacity: 1; 
+                        } 
+                        &:hover > .menu__restaurant__heart__one{
+                            color: $color-primary;
+                        }
+        }
     }
     &__type {
         display: flex; 
-        height: 500px;
-        margin: 30px 0px 0px 20px; 
-        justify-content: space-around; 
+        height: 600px;
+        margin: 20px 0px 0px 20px; 
+        justify-content: space-around;
+        flex-wrap: wrap; 
+        @media (max-width: 1000px){
+            height: 1300px;
+        }
         &__class{
-            width: 400px;
-            height: 330px; 
+            width: 30%;
+            height: 350px; 
+            @media (max-width: 1000px){
+                width: 100%; 
+            }
+            &__longer {
+                @media (max-width: 1000px){
+                    height: 33%; 
+                }
+            }
+            
             &__title {
                 border-bottom: 5px solid $color-tertiary; 
-                width: 15%;
+                width: 60px;
                 margin-bottom: 50px;
             }
             &__button{
@@ -414,7 +510,7 @@ header img {
                 background: white;
                 border: none; 
                 box-shadow: 1px 1px 1px 1px grey;  
-                width: 400px; 
+                width: 100%; 
                 height: 75px; 
                 display: flex;
                 align-items: flex-start; 
@@ -422,6 +518,9 @@ header img {
                 border-radius: 20px; 
                 overflow: hidden; 
                 cursor: pointer; 
+                @media (max-width: 1000px){
+                    width: 100%; 
+                }
                 &__more{
                     margin-left: 10px; 
                     display: flex; 
@@ -435,6 +534,7 @@ header img {
                         width: 300px; 
                     }
                     &__description{
+                        width: 100%; 
                         margin-top: 5px; 
                         height: 20px; 
                         padding: 0px; 
@@ -467,7 +567,7 @@ header img {
                     margin-left: 0px; 
                     width: 20%; 
                     height: 100%; 
-                    transform: translate(100px); 
+                    transform: translate(100%); 
                     transition: transform 200ms; 
                     &__validation {
                         color: white; 
@@ -476,7 +576,7 @@ header img {
                     }
                 }
                 &:hover > .menu__type__class__button__translation{
-                    transform: translate(30px); 
+                    transform: translate(50%); 
                     transition: transform 500ms; 
                 }
                 &:hover > .menu__type__class__button__translation > .menu__type__class__button__translation__validation{
@@ -486,10 +586,10 @@ header img {
                     margin-right: 0px; 
                     padding: 0px; 
                     width: 70%; 
-                    & > .menu__type__class__button__more__description{
+                    /* & > .menu__type__class__button__more__description{
                         width: 100%; 
 
-                    }
+                    } */
                 }
             } 
         }
@@ -503,12 +603,19 @@ header img {
     }
     &__order {
         width: 100%; 
-        height: 400px; 
+        height: 200px; 
         display: flex; 
         justify-content: center; 
-        align-items: center; 
+        align-items: flex-start; 
         margin: 0 auto; 
+        @media (max-width: 900px){
+            height: 200px; 
+            &__longer {
+                height: 100px;  
+            }
+        }
         &__button {
+            font-size: 1rem; 
             width: 220px;
             height: 50px; 
             border-radius: 30px; 
@@ -517,11 +624,87 @@ header img {
             height: 50px; 
             @include color-radial; 
             cursor: pointer;
-            box-shadow: 2px 2px 2px 2px #CCD1D1; 
+            box-shadow: 2px 2px 2px 2px #CCD1D1;
+            &:hover {
+                background: rgb(147,86,220);
+                background: linear-gradient(0deg, rgba(147,86,220,1) 31%, rgba(255,121,218,1) 100%);
+            }
         }
     }
 
 }
+
+/* Carte la note enchantée  */
+
+.banner__lanoteenchantee {
+    width: 100%; 
+    height: 400px; 
+    background: url("../../Maquettes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg")center no-repeat; 
+    background-size: cover; 
+    position: relative;
+    top: 12px; 
+}
+
+/* Carte À la française  */
+
+.banner__àlafrancaise {
+    width: 100%; 
+    height: 500px; 
+    background: url("../../Maquettes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg")center no-repeat; 
+    background-size: cover; 
+    position: relative;
+    top: 12px; 
+}
+
+/* Carte Le délice des sens  */
+
+.banner__ledélicedessens{
+    width: 100%; 
+    height: 500px; 
+    background: url("../../Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg")center no-repeat; 
+    background-size: cover; 
+    position: relative;
+    top: 12px; 
+}
+
+/* Animation coeur */
+
+.heart {
+    background: white; 
+    border: none; 
+    width: 50px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer; 
+}
+
+.one{
+    position: relative; 
+}
+
+.one-test {
+    position: absolute; 
+    top: 0px;
+    right: 0px; 
+    left: 0px; 
+    bottom: 0px; 
+    color: $color-primary; 
+    opacity: 0; 
+}
+
+.heart:hover > .one > .one-test {
+    opacity: 1; 
+}
+
+.heart:hover > .one {
+    color: $color-primary;
+}
+
+
+
+
+
 
 /* .container {
     border: 2px solid blue;

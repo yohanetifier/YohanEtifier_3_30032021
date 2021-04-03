@@ -19,7 +19,7 @@ header {
 }
 
 header img {
-  width: 15%;
+  width: 200px;
 }
 
 /* Place */
@@ -59,6 +59,7 @@ header img {
 .discovery__button {
   width: 220px;
   height: 50px;
+  font-size: 1rem;
   border-radius: 30px;
   color: white;
   border: none;
@@ -109,6 +110,11 @@ header img {
   background: #F2F4F4;
   height: 650px;
 }
+@media (max-width: 1200px) {
+  .restaurant {
+    height: 1200px;
+  }
+}
 .restaurant__sectiontitle {
   padding: 30px 0px 10px 20px;
   margin-top: 20px;
@@ -125,15 +131,21 @@ header img {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 .restaurant__card__top__one {
   border-radius: 10px;
   height: 250px;
-  width: 48%;
+  width: 600px;
   margin-bottom: 20px;
   text-decoration: none;
   color: black;
   box-shadow: 5px 5px 5px 5px lightgrey;
+}
+@media (max-width: 1200px) {
+  .restaurant__card__top__one {
+    width: 100%;
+  }
 }
 .restaurant__card__top__one__image {
   position: relative;
@@ -174,15 +186,47 @@ header img {
 }
 .restaurant__card__top__one__description__heart {
   margin: 10px 10px 0px 0px;
+  border: 2px solid red;
+  background: white;
+  border: none;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.restaurant__card__top__one__description__heart__one {
+  position: relative;
+}
+.restaurant__card__top__one__description__heart__one__two {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  color: #9356DC;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.restaurant__card__top__one__description__heart:hover > .restaurant__card__top__one__description__heart__one > .restaurant__card__top__one__description__heart__one__two {
+  opacity: 1;
+}
+.restaurant__card__top__one__description__heart:hover > .restaurant__card__top__one__description__heart__one {
+  color: #9356DC;
 }
 .restaurant__card__top__second {
   border-radius: 10px;
   height: 250px;
-  width: 48%;
+  width: 600px;
   margin-bottom: 20px;
   text-decoration: none;
   color: black;
   box-shadow: 5px 5px 5px 5px lightgrey;
+}
+@media (max-width: 1200px) {
+  .restaurant__card__top__second {
+    width: 100%;
+  }
 }
 .restaurant__card__top__second__image {
   position: relative;
@@ -229,15 +273,21 @@ header img {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 .restaurant__card__bottom__one {
   border-radius: 10px;
   height: 250px;
-  width: 48%;
+  width: 600px;
   margin-bottom: 20px;
   text-decoration: none;
   color: black;
   box-shadow: 5px 5px 5px 5px lightgrey;
+}
+@media (max-width: 1200px) {
+  .restaurant__card__bottom__one {
+    width: 100%;
+  }
 }
 .restaurant__card__bottom__one__image {
   position: relative;
@@ -273,11 +323,16 @@ header img {
 .restaurant__card__bottom__second {
   border-radius: 10px;
   height: 250px;
-  width: 48%;
+  width: 600px;
   margin-bottom: 20px;
   text-decoration: none;
   color: black;
   box-shadow: 5px 5px 5px 5px lightgrey;
+}
+@media (max-width: 1200px) {
+  .restaurant__card__bottom__second {
+    width: 100%;
+  }
 }
 .restaurant__card__bottom__second__image {
   position: relative;
@@ -377,6 +432,16 @@ footer a {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+@media (max-width: 1000px) {
+  .menu {
+    height: 1400px;
+  }
+}
+@media (max-width: 1000px) {
+  .menu__longerformobile {
+    height: 1600px;
+  }
+}
 .menu__restaurant {
   display: flex;
   justify-content: space-between;
@@ -388,19 +453,63 @@ footer a {
   font-weight: bold;
   font-style: italic;
 }
+.menu__restaurant__heart {
+  background: #EAECEE;
+  border: none;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.menu__restaurant__heart__one {
+  position: relative;
+}
+.menu__restaurant__heart__one__two {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  color: #9356DC;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.menu__restaurant__heart:hover > .menu__restaurant__heart__one > .menu__restaurant__heart__one__two {
+  opacity: 1;
+}
+.menu__restaurant__heart:hover > .menu__restaurant__heart__one {
+  color: #9356DC;
+}
 .menu__type {
   display: flex;
-  height: 500px;
-  margin: 30px 0px 0px 20px;
+  height: 600px;
+  margin: 20px 0px 0px 20px;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+@media (max-width: 1000px) {
+  .menu__type {
+    height: 1300px;
+  }
 }
 .menu__type__class {
-  width: 400px;
-  height: 330px;
+  width: 30%;
+  height: 350px;
+}
+@media (max-width: 1000px) {
+  .menu__type__class {
+    width: 100%;
+  }
+}
+@media (max-width: 1000px) {
+  .menu__type__class__longer {
+    height: 33%;
+  }
 }
 .menu__type__class__title {
   border-bottom: 5px solid #99E2D0;
-  width: 15%;
+  width: 60px;
   margin-bottom: 50px;
 }
 .menu__type__class__button {
@@ -409,7 +518,7 @@ footer a {
   background: white;
   border: none;
   box-shadow: 1px 1px 1px 1px grey;
-  width: 400px;
+  width: 100%;
   height: 75px;
   display: flex;
   align-items: flex-start;
@@ -417,6 +526,11 @@ footer a {
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .menu__type__class__button {
+    width: 100%;
+  }
 }
 .menu__type__class__button__more {
   margin-left: 10px;
@@ -432,6 +546,7 @@ footer a {
   width: 300px;
 }
 .menu__type__class__button__more__description {
+  width: 100%;
   margin-top: 5px;
   height: 20px;
   padding: 0px;
@@ -463,7 +578,7 @@ footer a {
   margin-left: 0px;
   width: 20%;
   height: 100%;
-  transform: translate(100px);
+  transform: translate(100%);
   transition: transform 200ms;
 }
 .menu__type__class__button__translation__validation {
@@ -472,7 +587,7 @@ footer a {
   transition: transform 1000ms;
 }
 .menu__type__class__button:hover > .menu__type__class__button__translation {
-  transform: translate(30px);
+  transform: translate(50%);
   transition: transform 500ms;
 }
 .menu__type__class__button:hover > .menu__type__class__button__translation > .menu__type__class__button__translation__validation {
@@ -482,9 +597,10 @@ footer a {
   margin-right: 0px;
   padding: 0px;
   width: 70%;
-}
-.menu__type__class__button:hover > .menu__type__class__button__more > .menu__type__class__button__more__description {
-  width: 100%;
+  /* & > .menu__type__class__button__more__description{
+      width: 100%; 
+
+  } */
 }
 .menu__dishes {
   height: 330px;
@@ -494,13 +610,22 @@ footer a {
 }
 .menu__order {
   width: 100%;
-  height: 400px;
+  height: 200px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin: 0 auto;
 }
+@media (max-width: 900px) {
+  .menu__order {
+    height: 200px;
+  }
+  .menu__order__longer {
+    height: 100px;
+  }
+}
 .menu__order__button {
+  font-size: 1rem;
   width: 220px;
   height: 50px;
   border-radius: 30px;
@@ -508,9 +633,76 @@ footer a {
   border: none;
   height: 50px;
   background: #9356dc;
-  background: linear-gradient(0deg, #9356dc 31%, #ff79da 100%);
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.99) 31%, rgba(255, 121, 218, 0.99) 100%);
   cursor: pointer;
   box-shadow: 2px 2px 2px 2px #CCD1D1;
+}
+.menu__order__button:hover {
+  background: #9356dc;
+  background: linear-gradient(0deg, #9356dc 31%, #ff79da 100%);
+}
+
+/* Carte la note enchantée  */
+.banner__lanoteenchantee {
+  width: 100%;
+  height: 400px;
+  background: url("../../Maquettes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 12px;
+}
+
+/* Carte À la française  */
+.banner__àlafrancaise {
+  width: 100%;
+  height: 500px;
+  background: url("../../Maquettes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 12px;
+}
+
+/* Carte Le délice des sens  */
+.banner__ledélicedessens {
+  width: 100%;
+  height: 500px;
+  background: url("../../Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 12px;
+}
+
+/* Animation coeur */
+.heart {
+  background: white;
+  border: none;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.one {
+  position: relative;
+}
+
+.one-test {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  color: #9356DC;
+  opacity: 0;
+}
+
+.heart:hover > .one > .one-test {
+  opacity: 1;
+}
+
+.heart:hover > .one {
+  color: #9356DC;
 }
 
 /* .container {
