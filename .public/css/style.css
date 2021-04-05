@@ -1,6 +1,58 @@
 @charset "UTF-8";
 /* Variables */
 /* Mixin */
+/* Keyframes */
+@keyframes display {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes loading-page {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading-page-stop {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -50;
+  }
+}
+.loader {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  height: 100%;
+  width: 100%;
+  animation: loading-page-stop 3000ms 200ms both running ease 1;
+}
+.loader__spinner {
+  animation: loading-page 3000ms 1;
+  color: #9356dc;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -57,19 +109,37 @@ header img {
   margin-top: 10px;
 }
 .discovery__button {
+  position: relative;
+  font-size: 1rem;
   width: 220px;
   height: 50px;
-  font-size: 1rem;
   border-radius: 30px;
   color: white;
   border: none;
-  background: #9356dc;
-  background: linear-gradient(0deg, #9356dc 31%, #ff79da 100%);
-  box-shadow: 2px 2px 2px 2px #CCD1D1;
+  height: 50px;
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.99) 31%, rgba(255, 121, 218, 0.99) 100%);
   cursor: pointer;
+  box-shadow: 2px 2px 2px 2px #CCD1D1;
+  z-index: 1;
 }
-.discovery__button:focus {
-  outline: 0;
+.discovery__button:hover {
+  background: linear-gradient(0deg, #9356dc 31%, #ff79da 100%);
+  box-shadow: 3px 3px 3px 3px #CCD1D1;
+}
+.discovery__button:hover::after {
+  opacity: 1;
+}
+.discovery__button::after {
+  content: "";
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(0deg, #a16be0 31%, #ff93e1 100%);
+  opacity: 0;
+  z-index: -1;
 }
 
 .step__title {
@@ -487,6 +557,7 @@ footer a {
   margin: 20px 0px 0px 20px;
   justify-content: space-around;
   flex-wrap: wrap;
+  transform-origin: top;
 }
 @media (max-width: 1000px) {
   .menu__type {
@@ -526,6 +597,36 @@ footer a {
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
+}
+.menu__type__class__button--1 {
+  animation: display 1s 300ms both;
+}
+.menu__type__class__button--2 {
+  animation: display 1s 600ms both;
+}
+.menu__type__class__button--3 {
+  animation: display 1s 900ms both;
+}
+.menu__type__class__button--4 {
+  animation: display 1s 1200ms both;
+}
+.menu__type__class__button--5 {
+  animation: display 1s 1500ms both;
+}
+.menu__type__class__button--6 {
+  animation: display 1s 1800ms both;
+}
+.menu__type__class__button--7 {
+  animation: display 1s 2100ms both;
+}
+.menu__type__class__button--8 {
+  animation: display 1s 2400ms both;
+}
+.menu__type__class__button--9 {
+  animation: display 1s 2700ms both;
+}
+.menu__type__class__button--10 {
+  animation: display 1s 3000ms both;
 }
 @media (max-width: 1000px) {
   .menu__type__class__button {
@@ -579,16 +680,15 @@ footer a {
   width: 20%;
   height: 100%;
   transform: translate(100%);
-  transition: transform 200ms;
+  transition: transform 300ms ease-out;
 }
 .menu__type__class__button__translation__validation {
   color: white;
-  transform: rotate(-180deg);
-  transition: transform 1000ms;
+  transform: rotate(-270deg);
+  transition: transform 500ms ease-out;
 }
 .menu__type__class__button:hover > .menu__type__class__button__translation {
   transform: translate(50%);
-  transition: transform 500ms;
 }
 .menu__type__class__button:hover > .menu__type__class__button__translation > .menu__type__class__button__translation__validation {
   transform: rotate(0deg);
@@ -597,10 +697,6 @@ footer a {
   margin-right: 0px;
   padding: 0px;
   width: 70%;
-  /* & > .menu__type__class__button__more__description{
-      width: 100%; 
-
-  } */
 }
 .menu__dishes {
   height: 330px;
@@ -625,6 +721,7 @@ footer a {
   }
 }
 .menu__order__button {
+  position: relative;
   font-size: 1rem;
   width: 220px;
   height: 50px;
@@ -632,14 +729,29 @@ footer a {
   color: white;
   border: none;
   height: 50px;
-  background: #9356dc;
   background: linear-gradient(0deg, rgba(147, 86, 220, 0.99) 31%, rgba(255, 121, 218, 0.99) 100%);
   cursor: pointer;
   box-shadow: 2px 2px 2px 2px #CCD1D1;
+  z-index: 1;
 }
 .menu__order__button:hover {
-  background: #9356dc;
   background: linear-gradient(0deg, #9356dc 31%, #ff79da 100%);
+  box-shadow: 3px 3px 3px 3px #CCD1D1;
+}
+.menu__order__button:hover::after {
+  opacity: 1;
+}
+.menu__order__button::after {
+  content: "";
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(0deg, #a16be0 31%, #ff93e1 100%);
+  opacity: 0;
+  z-index: -1;
 }
 
 /* Carte la note enchantée  */
