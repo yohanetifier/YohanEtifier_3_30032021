@@ -10,14 +10,6 @@
     opacity: 1;
   }
 }
-@keyframes fadein {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
 @keyframes loading-page {
   0% {
     transform: rotate(0);
@@ -35,6 +27,7 @@
     z-index: -50;
   }
 }
+/* Loader */
 .loader {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
@@ -46,7 +39,7 @@
   z-index: 50;
   height: 100%;
   width: 100%;
-  animation: loading-page-stop 3000ms 200ms both running ease 1;
+  animation: loading-page-stop 3000ms 200ms both running cubic-bezier(0.37, 0.93, 1, 0.97) 1;
 }
 .loader__spinner {
   animation: loading-page 3000ms 1;
@@ -252,7 +245,7 @@ header img {
 .restaurant__card__top__one__description__placeandname__place {
   font-weight: bold;
   font-size: 1.2rem;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 .restaurant__card__top__one__description__heart {
   margin: 10px 10px 0px 0px;
@@ -333,7 +326,7 @@ header img {
 .restaurant__card__top__second__description__placeandname__place {
   font-weight: bold;
   font-size: 1.2rem;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 .restaurant__card__top__second__description__heart {
   margin: 10px 10px 0px 0px;
@@ -385,7 +378,7 @@ header img {
 .restaurant__card__bottom__one__description__placeandname__place {
   font-weight: bold;
   font-size: 1.2rem;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 .restaurant__card__bottom__one__description__heart {
   margin: 10px 10px 0px 0px;
@@ -430,7 +423,7 @@ header img {
 .restaurant__card__bottom__second__description__placeandname__place {
   font-weight: bold;
   font-size: 1.2rem;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 .restaurant__card__bottom__second__description__heart {
   margin: 10px 10px 0px 0px;
@@ -599,34 +592,34 @@ footer a {
   cursor: pointer;
 }
 .menu__type__class__button--1 {
-  animation: display 1s 300ms both;
+  animation: display 1s 300ms both ease-out;
 }
 .menu__type__class__button--2 {
-  animation: display 1s 600ms both;
+  animation: display 1s 600ms both ease-out;
 }
 .menu__type__class__button--3 {
-  animation: display 1s 900ms both;
+  animation: display 1s 900ms both ease-out;
 }
 .menu__type__class__button--4 {
-  animation: display 1s 1200ms both;
+  animation: display 1s 1200ms both ease-out;
 }
 .menu__type__class__button--5 {
-  animation: display 1s 1500ms both;
+  animation: display 1s 1500ms both ease-out;
 }
 .menu__type__class__button--6 {
-  animation: display 1s 1800ms both;
+  animation: display 1s 1800ms both ease-out;
 }
 .menu__type__class__button--7 {
-  animation: display 1s 2100ms both;
+  animation: display 1s 2100ms both ease-out;
 }
 .menu__type__class__button--8 {
-  animation: display 1s 2400ms both;
+  animation: display 1s 2400ms both ease-out;
 }
 .menu__type__class__button--9 {
-  animation: display 1s 2700ms both;
+  animation: display 1s 2700ms both ease-out;
 }
 .menu__type__class__button--10 {
-  animation: display 1s 3000ms both;
+  animation: display 1s 3000ms both ease-out;
 }
 @media (max-width: 1000px) {
   .menu__type__class__button {
@@ -816,90 +809,5 @@ footer a {
 .heart:hover > .one {
   color: #9356DC;
 }
-
-/* .container {
-    border: 2px solid blue;
-    width: 400px;
-    display: flex;
-    border-radius: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    transform-origin: top;
-    animation: meal 200ms ease-in 150ms; 
-    &__menu {
-      border: 2px solid green;
-      border-top-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      margin-right: 0px;
-      width: 100%;
-      transition: width 1000ms cubic-bezier(0, 0.14, 0, 0.99);
-      &--description {
-        height: 20px;
-        padding: 0px;
-        display: flex;
-        justify-content: space-between;
-         border: 2px solid green;
-        border-bottom-left-radius: 20px;
-        &--meal {
-          display: block;
-          border: 2px solid black; 
-          border-bottom-left-radius: 20px;
-          margin-top: 0px;
-          width: 350px;
-          font-size: 17px;
-          height: 100%;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          transition: text-overflow 500ms;
-        }
-        &--price {
-          border: 2px solid red; 
-          width: 30px;
-          height: 100%;
-          margin-top: 0px;
-        }
-      }
-    }
-    &:hover > .container__background {
-      transform: translate(0px);
-      transition: transform 500ms;
-    }
-    &:hover > .container__background > .container__background--validation {
-      transform: rotate(0deg);
-    }
-    &:hover > .container__menu {
-      margin-right: 0px;
-      padding: 0px;
-      width: 70%;
-      & > .container__menu--description {
-        width: 100%;
-      }
-    }
-
-    &:hover
-      > .container__menu
-      > .container__menu--description
-      > .container__menu--description--meal {
-      text-overflow: ellipsis;
-    }
-  }
-
-  .container__background {
-    background-color: green;
-    margin-left: 0px;
-    width: 30%;
-    transform: translate(20px);
-    transition: transform 200ms;
-    &--validation {
-      width: 30px;
-      height: 30px;
-      border: 2px solid green; 
-      margin-top: 27px;
-      margin-left: 30px;
-      transform: rotate(-90deg);
-      transition: transform 1000ms;
-    }
-  } */
 
 /*# sourceMappingURL=style.css.map */
