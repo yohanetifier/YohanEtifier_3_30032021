@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* Variables */
 /* Mixin */
 /* Keyframes */
 @keyframes display {
@@ -27,7 +26,15 @@
     z-index: -50;
   }
 }
-/* Loader */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Times New Roman", serif;
+}
+* button:focus {
+  outline: 0;
+}
+
 .loader {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
@@ -44,15 +51,6 @@
 .loader__spinner {
   animation: loading-page 3000ms 1;
   color: #9356dc;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", "Times New Roman", serif;
-}
-* button:focus {
-  outline: 0;
 }
 
 /* Header */
@@ -110,9 +108,9 @@ header img {
   color: white;
   border: none;
   height: 50px;
-  background: linear-gradient(0deg, rgba(147, 86, 220, 0.99) 31%, rgba(255, 121, 218, 0.99) 100%);
   cursor: pointer;
   box-shadow: 2px 2px 2px 2px #CCD1D1;
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.99) 31%, rgba(255, 121, 218, 0.99) 100%);
   z-index: 1;
 }
 .discovery__button:hover {
@@ -455,7 +453,6 @@ footer a {
   color: white;
 }
 
-/* Menu la palette du goût */
 /* Header */
 .header__restaurant {
   display: flex;
@@ -476,12 +473,42 @@ footer a {
 
 /* banner */
 .banner {
-  width: 100%;
-  height: 500px;
   background: url("../../Maquettes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") center no-repeat;
   background-size: cover;
   position: relative;
   top: 12px;
+  width: 100%;
+  height: 500px;
+}
+
+/* Carte la note enchantée  */
+.banner__lanoteenchantee {
+  background: url("../../Maquettes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 12px;
+  width: 100%;
+  height: 500px;
+}
+
+/* Carte À la française  */
+.banner__àlafrancaise {
+  background: url("../../Maquettes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 12px;
+  width: 100%;
+  height: 500px;
+}
+
+/* Carte Le délice des sens  */
+.banner__ledélicedessens {
+  background: url("../../Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 12px;
+  width: 100%;
+  height: 500px;
 }
 
 /* Carte la palette du goût */
@@ -691,12 +718,6 @@ footer a {
   padding: 0px;
   width: 70%;
 }
-.menu__dishes {
-  height: 330px;
-}
-.menu__desserts {
-  height: 330px;
-}
 .menu__order {
   width: 100%;
   height: 200px;
@@ -745,69 +766,6 @@ footer a {
   background: linear-gradient(0deg, #a16be0 31%, #ff93e1 100%);
   opacity: 0;
   z-index: -1;
-}
-
-/* Carte la note enchantée  */
-.banner__lanoteenchantee {
-  width: 100%;
-  height: 400px;
-  background: url("../../Maquettes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") center no-repeat;
-  background-size: cover;
-  position: relative;
-  top: 12px;
-}
-
-/* Carte À la française  */
-.banner__àlafrancaise {
-  width: 100%;
-  height: 500px;
-  background: url("../../Maquettes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") center no-repeat;
-  background-size: cover;
-  position: relative;
-  top: 12px;
-}
-
-/* Carte Le délice des sens  */
-.banner__ledélicedessens {
-  width: 100%;
-  height: 500px;
-  background: url("../../Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") center no-repeat;
-  background-size: cover;
-  position: relative;
-  top: 12px;
-}
-
-/* Animation coeur */
-.heart {
-  background: white;
-  border: none;
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.one {
-  position: relative;
-}
-
-.one-test {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  left: 0px;
-  bottom: 0px;
-  color: #9356DC;
-  opacity: 0;
-}
-
-.heart:hover > .one > .one-test {
-  opacity: 1;
-}
-
-.heart:hover > .one {
-  color: #9356DC;
 }
 
 /*# sourceMappingURL=style.css.map */

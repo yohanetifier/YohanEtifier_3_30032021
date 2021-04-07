@@ -1,0 +1,28 @@
+/* footer  */
+
+
+footer {
+    height: 300px; 
+    background-color:#626567; 
+    & img{
+        filter: invert(100%); 
+        width: 120px; 
+        margin: 20px 0px 20px 20px;
+    }
+    & ul {
+        color: white;
+        margin: 20px 0px 20px 20px;
+        list-style-type: none; 
+    & li {
+        margin-bottom: 10px; 
+    }
+    & i {
+        margin-right: 5px; 
+    }
+    }
+    & a {
+        text-decoration: none; 
+        color: white; 
+
+    }
+}

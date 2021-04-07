@@ -1,0 +1,161 @@
+/* Restaurant */
+
+.restaurant{
+    background: $background-discovery; 
+    height: 650px;
+    @media (max-width: 1200px){
+        height: 1200px; 
+    }
+    &__sectiontitle {
+        padding: 30px 0px 10px 20px; 
+        margin-top: 20px; 
+        margin-bottom: 20px;
+    }  
+    &__card{
+        display: flex; 
+        flex-direction: column;
+        margin: 0px 20px;  
+        border-radius: 20px;
+        &__top {
+            @include restaurant-card-top-sizing;
+            flex-wrap: wrap; 
+            &__one{
+               @include restaurant-card-sizing;
+               @media (max-width: 1200px){
+                   width: 100%;
+               }
+                &__image {
+                    @include restaurant-card-image-sizing; 
+                    background: url("../../Maquettes Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") center no-repeat;
+                    background-size: cover; 
+                    &__new {
+                        @include restaurant-card-new-sizing; 
+                    } 
+                }
+                &__description {
+                    @include restaurant-card-description-sizing;
+                    &__placeandname {
+                        margin: 10px 0px 0px 10px; 
+                        &__place{
+                            @include restaurant-card-place-sizing;
+                        }
+                    } 
+                    &__heart {
+                        @include margin-heart; 
+                        border: 2px solid red; 
+                        background: white; 
+                        border: none; 
+                        width: 50px; 
+                        display: flex; 
+                        justify-content: center; 
+                        align-items: center; 
+                        cursor: pointer; 
+                        &__one {
+                            position: relative; 
+                            &__two {
+                                position: absolute; 
+                                top: 0px;
+                                right: 0px; 
+                                left: 0px; 
+                                bottom: 0px; 
+                                color: $color-primary; 
+                                opacity: 0; 
+                                transition: opacity 500ms ease-in-out; 
+                            }
+                            
+                        }   
+                        &:hover > .restaurant__card__top__one__description__heart__one > .restaurant__card__top__one__description__heart__one__two{
+                            opacity: 1; 
+                        } 
+                        &:hover > .restaurant__card__top__one__description__heart__one{
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+            &__second{
+                @include restaurant-card-sizing;
+                @media (max-width: 1200px){
+                    width: 100%;
+                }
+                &__image {
+                    @include restaurant-card-image-sizing; 
+                    background: url("../../Maquettes Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") center no-repeat; 
+                    background-size: cover; 
+                    &__new {
+                        @include restaurant-card-new-sizing; 
+                    }
+                }
+                &__description{
+                    @include restaurant-card-description-sizing; 
+                    &__placeandname{
+                        margin: 10px 0px 0px 10px;
+                        &__place {
+                            @include restaurant-card-place-sizing; 
+                        } 
+                        }
+                        &__heart {
+                            @include margin-heart; 
+                    }
+
+                }
+
+            }
+        }
+           &__bottom {
+               @include restaurant-card-top-sizing;
+               flex-wrap: wrap;  
+               &__one {
+                   @include restaurant-card-sizing;
+                   @media (max-width: 1200px){
+                    width: 100%;
+                }
+                   &__image {
+                       @include restaurant_card_image-sizing;
+                       background: url("../../Maquettes Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") center no-repeat;
+                       background-size: cover;
+                       
+                   }
+                   &__description {
+                       @include restaurant-card-description-sizing; 
+                       &__placeandname {
+                           @include margin-placeandname; 
+                           &__place {
+                               @include restaurant-card-place-sizing;
+                           }
+                       }
+                       &__heart {
+                           @include margin-heart; 
+                       }
+                   }
+               } 
+               &__second {
+                @include restaurant-card-sizing; 
+                @media (max-width: 1200px){
+                    width: 100%;
+                }
+                &__image {
+                    @include restaurant_card_image-sizing;
+                    background: url("../../Maquettes Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") center no-repeat;
+                    background-size: cover;
+                
+                }
+                &__description {
+                    @include restaurant-card-description-sizing; 
+                    &__placeandname {
+                        @include margin-placeandname; 
+                        &__place {
+                            @include restaurant-card-place-sizing;
+                        }
+                    }
+                    &__heart {
+                        @include margin-heart; 
+                    }
+                }
+                   
+               }
+
+           }
+        }
+
+    }

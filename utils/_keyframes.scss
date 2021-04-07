@@ -1,0 +1,32 @@
+/* Keyframes */
+
+@keyframes display{
+    from{
+        opacity: 0; 
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes loading-page {
+    0% {
+        transform: rotate(0); 
+    }
+    100%{
+        transform: rotate(360deg);
+
+    }
+
+}
+
+@keyframes loading-page-stop {
+    from{
+        opacity: 1; 
+    }
+    to{
+        opacity: 0;
+        z-index: -50;  
+    }
+
+}

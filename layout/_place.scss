@@ -1,0 +1,19 @@
+/* Place */
+
+
+.place {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #EAECEE;
+    height: 40px; 
+    &__input { 
+        margin-left: 20px; 
+        border:none; 
+        background-color: $background-place; 
+        &:focus { 
+            outline: 0; 
+        }
+    }
+    
+}

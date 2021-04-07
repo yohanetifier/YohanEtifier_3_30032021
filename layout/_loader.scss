@@ -1,0 +1,18 @@
+.loader {
+    background-color: hsla(0,0%,100%,.9); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: fixed; 
+    top: 0px; 
+    left: 0px; 
+    z-index: 50; 
+    height: 100%; 
+    width: 100%; 
+    animation: loading-page-stop 3000ms 200ms both running cubic-bezier(.37,.93,1,.97) 1;
+    &__spinner { 
+        animation: loading-page 3000ms 1;  
+        @include color-primary-and-second; 
+    } 
+
+}
