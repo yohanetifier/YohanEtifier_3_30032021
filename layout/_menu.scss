@@ -1,4 +1,4 @@
-/* Carte la palette du goût */
+/* Carte  */
 
 
 .menu {
@@ -90,7 +90,7 @@
                 margin-top: 20px; 
                 background: white;
                 border: none; 
-                box-shadow: 1px 1px 1px 1px grey;  
+                box-shadow: $box-shadow; 
                 width: 100%; 
                 height: 75px; 
                 display: flex;
@@ -117,7 +117,8 @@
                     transition: width 1000ms cubic-bezier(0, 0.14, 0, 0.99);
                     & h4{
                         font-size: 1.2rem; 
-                        width: 300px; 
+                        width: 300px;
+                        font-weight: 400; 
                     }
                     &__description{
                         width: 100%; 
@@ -131,6 +132,7 @@
                             width: 350px; 
                             font-size: 1rem; 
                             height: 100%; 
+                            font-weight: 100; 
                             white-space: nowrap; 
                             overflow: hidden; 
                             text-overflow:ellipsis; 
@@ -140,7 +142,7 @@
                             width: 30px;
                             height: 100%; 
                             margin-top: 0px;
-                            font-weight: bold; 
+                            font-weight: 400; 
                             font-size: 1rem;  
                         }
                     }
