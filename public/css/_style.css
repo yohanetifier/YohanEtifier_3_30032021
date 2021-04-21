@@ -1,0 +1,772 @@
+@charset "UTF-8";
+/* Mixin */
+/* Keyframes */
+@keyframes display {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes loading-page {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading-page-stop {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -50;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Times New Roman", serif;
+}
+* button:focus {
+  outline: 0;
+}
+
+.loader {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  height: 100%;
+  width: 100%;
+  animation: loading-page-stop 3000ms 200ms both running cubic-bezier(0.37, 0.93, 1, 0.97) 1;
+}
+.loader__spinner {
+  animation: loading-page 3000ms 1;
+  color: #9356dc;
+}
+
+/* Header */
+header {
+  margin: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img {
+  width: 200px;
+}
+
+/* Place */
+.place {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EAECEE;
+  height: 40px;
+}
+.place__input {
+  margin-left: 20px;
+  border: none;
+  background-color: #EAECEE;
+}
+.place__input:focus {
+  outline: 0;
+}
+
+/* Discovery  */
+.discovery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin: 0 auto;
+  background: #F2F4F4;
+}
+.discovery__title {
+  text-align: center;
+}
+.discovery__paragraph {
+  text-align: center;
+  margin-top: 10px;
+}
+.discovery__button {
+  position: relative;
+  font-size: 1rem;
+  width: 220px;
+  height: 50px;
+  border-radius: 30px;
+  color: white;
+  border: none;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 2px #CCD1D1;
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.99) 31%, rgba(255, 121, 218, 0.99) 100%);
+  z-index: 1;
+}
+.discovery__button:hover {
+  background: linear-gradient(0deg, #9356dc 31%, #ff79da 100%);
+  box-shadow: 3px 3px 3px 3px #CCD1D1;
+}
+.discovery__button:hover::after {
+  opacity: 1;
+}
+.discovery__button::after {
+  content: "";
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(0deg, #a16be0 31%, #ff93e1 100%);
+  opacity: 0;
+  z-index: -1;
+}
+
+.step__title {
+  text-align: center;
+  margin-top: 50px;
+}
+.step__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.step__container__step {
+  display: flex;
+  margin-bottom: 30px;
+  background: #F2F4F4;
+  padding: 20px 40px;
+  border-radius: 20px;
+  position: relative;
+}
+.step__container__step__number {
+  position: relative;
+  right: 50px;
+  bottom: 2px;
+  color: white;
+  background: #9356DC;
+  border-radius: 50%;
+  padding: 2px 7px 2px 7px;
+}
+.step__container__step__icone {
+  position: relative;
+  right: 20px;
+  color: #808B96;
+}
+
+/* Restaurant */
+.restaurant {
+  background: #F2F4F4;
+  height: 650px;
+}
+@media (max-width: 1200px) {
+  .restaurant {
+    height: 1200px;
+  }
+}
+.restaurant__sectiontitle {
+  padding: 30px 0px 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.restaurant__card {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px;
+  border-radius: 20px;
+}
+.restaurant__card__top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.restaurant__card__top__one {
+  border-radius: 10px;
+  height: 250px;
+  width: 600px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 5px 5px 5px 5px lightgrey;
+}
+@media (max-width: 1200px) {
+  .restaurant__card__top__one {
+    width: 100%;
+  }
+}
+.restaurant__card__top__one__image {
+  position: relative;
+  display: flex;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 75%;
+  width: 100%;
+  background: url("../../Maquettes-Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") center no-repeat;
+  background-size: cover;
+}
+.restaurant__card__top__one__image__new {
+  position: absolute;
+  color: #1E8449;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #99E2D0;
+}
+.restaurant__card__top__one__description {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  height: 25%;
+  width: 100%;
+  margin-top: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.restaurant__card__top__one__description__placeandname {
+  margin: 10px 0px 0px 10px;
+}
+.restaurant__card__top__one__description__placeandname__place {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.restaurant__card__top__one__description__heart {
+  margin: 10px 10px 0px 0px;
+  background: white;
+  border: none;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.restaurant__card__top__one__description__heart__one {
+  position: relative;
+}
+.restaurant__card__top__one__description__heart__one__two {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  color: #9356DC;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.restaurant__card__top__one__description__heart:hover > .restaurant__card__top__one__description__heart__one > .restaurant__card__top__one__description__heart__one__two {
+  opacity: 1;
+}
+.restaurant__card__top__one__description__heart:hover > .restaurant__card__top__one__description__heart__one {
+  color: #9356DC;
+}
+.restaurant__card__top__second {
+  border-radius: 10px;
+  height: 250px;
+  width: 600px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 5px 5px 5px 5px lightgrey;
+}
+@media (max-width: 1200px) {
+  .restaurant__card__top__second {
+    width: 100%;
+  }
+}
+.restaurant__card__top__second__image {
+  position: relative;
+  display: flex;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 75%;
+  width: 100%;
+  background: url("../../Maquettes-Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") center no-repeat;
+  background-size: cover;
+}
+.restaurant__card__top__second__image__new {
+  position: absolute;
+  color: #1E8449;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #99E2D0;
+}
+.restaurant__card__top__second__description {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  height: 25%;
+  width: 100%;
+  margin-top: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.restaurant__card__top__second__description__placeandname {
+  margin: 10px 0px 0px 10px;
+}
+.restaurant__card__top__second__description__placeandname__place {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.restaurant__card__top__second__description__heart {
+  margin: 10px 10px 0px 0px;
+}
+.restaurant__card__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.restaurant__card__bottom__one {
+  border-radius: 10px;
+  height: 250px;
+  width: 600px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 5px 5px 5px 5px lightgrey;
+}
+@media (max-width: 1200px) {
+  .restaurant__card__bottom__one {
+    width: 100%;
+  }
+}
+.restaurant__card__bottom__one__image {
+  position: relative;
+  display: flex;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 75%;
+  width: 100%;
+  background: url("../../Maquettes-Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") center no-repeat;
+  background-size: cover;
+}
+.restaurant__card__bottom__one__description {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  height: 25%;
+  width: 100%;
+  margin-top: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.restaurant__card__bottom__one__description__placeandname {
+  margin: 10px 0px 0px 10px;
+}
+.restaurant__card__bottom__one__description__placeandname__place {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.restaurant__card__bottom__one__description__heart {
+  margin: 10px 10px 0px 0px;
+}
+.restaurant__card__bottom__second {
+  border-radius: 10px;
+  height: 250px;
+  width: 600px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 5px 5px 5px 5px lightgrey;
+}
+@media (max-width: 1200px) {
+  .restaurant__card__bottom__second {
+    width: 100%;
+  }
+}
+.restaurant__card__bottom__second__image {
+  position: relative;
+  display: flex;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 75%;
+  width: 100%;
+  background: url("../../Maquettes-Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") center no-repeat;
+  background-size: cover;
+}
+.restaurant__card__bottom__second__description {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  height: 25%;
+  width: 100%;
+  margin-top: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.restaurant__card__bottom__second__description__placeandname {
+  margin: 10px 0px 0px 10px;
+}
+.restaurant__card__bottom__second__description__placeandname__place {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.restaurant__card__bottom__second__description__heart {
+  margin: 10px 10px 0px 0px;
+}
+
+/* footer  */
+footer {
+  height: 300px;
+  background-color: #626567;
+}
+footer img {
+  filter: invert(100%);
+  width: 120px;
+  margin: 20px 0px 20px 20px;
+}
+footer ul {
+  color: white;
+  margin: 20px 0px 20px 20px;
+  list-style-type: none;
+}
+footer ul li {
+  margin-bottom: 10px;
+}
+footer ul i {
+  margin-right: 5px;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Header */
+.header__restaurant {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 20px 0px;
+}
+.header__restaurant__arrow {
+  color: black;
+}
+.header__restaurant i {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  height: 100%;
+  align-items: center;
+}
+
+/* banner */
+.banner {
+  background: url("../../Maquettes-Ohmyfood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 12px;
+  width: 100%;
+  height: 500px;
+}
+
+/* Carte la note enchantée  */
+.banner__lanoteenchantee {
+  background: url("../../Maquettes-Ohmyfood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 12px;
+  width: 100%;
+  height: 500px;
+}
+
+/* Carte À la française  */
+.banner__àlafrancaise {
+  background: url("../../Maquettes-Ohmyfood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 12px;
+  width: 100%;
+  height: 500px;
+}
+
+/* Carte Le délice des sens  */
+.banner__ledélicedessens {
+  background: url("../../Maquettes-Ohmyfood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 12px;
+  width: 100%;
+  height: 500px;
+}
+
+/* Carte  */
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 700px;
+  margin-bottom: 0px;
+  background: #EAECEE;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+@media (max-width: 1000px) {
+  .menu {
+    height: 1400px;
+  }
+}
+@media (max-width: 1000px) {
+  .menu__longerformobile {
+    height: 1600px;
+  }
+}
+.menu__restaurant {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 20px 20px 30px;
+}
+.menu__restaurant__title {
+  font-family: "Shrikhand", cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+.menu__restaurant__heart {
+  background: #EAECEE;
+  border: none;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.menu__restaurant__heart__one {
+  position: relative;
+}
+.menu__restaurant__heart__one__two {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  color: #9356DC;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+.menu__restaurant__heart:hover > .menu__restaurant__heart__one > .menu__restaurant__heart__one__two {
+  opacity: 1;
+}
+.menu__restaurant__heart:hover > .menu__restaurant__heart__one {
+  color: #9356DC;
+}
+.menu__type {
+  display: flex;
+  height: 600px;
+  margin: 20px 0px 0px 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  transform-origin: top;
+}
+@media (max-width: 1000px) {
+  .menu__type {
+    height: 1300px;
+  }
+}
+.menu__type__class {
+  width: 30%;
+  height: 350px;
+}
+@media (max-width: 1000px) {
+  .menu__type__class {
+    width: 100%;
+  }
+}
+@media (max-width: 1000px) {
+  .menu__type__class__longer {
+    height: 33%;
+  }
+}
+.menu__type__class__title {
+  border-bottom: 5px solid #99E2D0;
+  width: 60px;
+  margin-bottom: 50px;
+}
+.menu__type__class__button {
+  margin-left: -5px;
+  margin-top: 20px;
+  background: white;
+  border: none;
+  box-shadow: 2px 2px 2px 2px lightgrey;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.menu__type__class__button--1 {
+  animation: display 1s 300ms both ease-out;
+}
+.menu__type__class__button--2 {
+  animation: display 1s 600ms both ease-out;
+}
+.menu__type__class__button--3 {
+  animation: display 1s 900ms both ease-out;
+}
+.menu__type__class__button--4 {
+  animation: display 1s 1200ms both ease-out;
+}
+.menu__type__class__button--5 {
+  animation: display 1s 1500ms both ease-out;
+}
+.menu__type__class__button--6 {
+  animation: display 1s 1800ms both ease-out;
+}
+.menu__type__class__button--7 {
+  animation: display 1s 2100ms both ease-out;
+}
+.menu__type__class__button--8 {
+  animation: display 1s 2400ms both ease-out;
+}
+.menu__type__class__button--9 {
+  animation: display 1s 2700ms both ease-out;
+}
+.menu__type__class__button--10 {
+  animation: display 1s 3000ms both ease-out;
+}
+@media (max-width: 1000px) {
+  .menu__type__class__button {
+    width: 100%;
+  }
+}
+.menu__type__class__button__more {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 95%;
+  height: 100%;
+  transition: width 1000ms cubic-bezier(0, 0.14, 0, 0.99);
+}
+.menu__type__class__button__more h4 {
+  font-size: 1.2rem;
+  width: 300px;
+  font-weight: 400;
+}
+.menu__type__class__button__more__description {
+  width: 100%;
+  margin-top: 5px;
+  height: 20px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.menu__type__class__button__more__description__meal {
+  display: block;
+  width: 350px;
+  font-size: 1rem;
+  height: 100%;
+  font-weight: 100;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: text-overflow 500ms;
+}
+.menu__type__class__button__more__description__price {
+  width: 30px;
+  height: 100%;
+  margin-top: 0px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.menu__type__class__button__translation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  margin-left: 0px;
+  width: 20%;
+  height: 100%;
+  transform: translate(100%);
+  transition: transform 300ms ease-out;
+}
+.menu__type__class__button__translation__validation {
+  color: white;
+  transform: rotate(-270deg);
+  transition: transform 500ms ease-out;
+}
+.menu__type__class__button:hover > .menu__type__class__button__translation {
+  transform: translate(50%);
+}
+.menu__type__class__button:hover > .menu__type__class__button__translation > .menu__type__class__button__translation__validation {
+  transform: rotate(0deg);
+}
+.menu__type__class__button:hover > .menu__type__class__button__more {
+  margin-right: 0px;
+  padding: 0px;
+  width: 70%;
+}
+.menu__order {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .menu__order {
+    height: 200px;
+  }
+  .menu__order__longer {
+    height: 100px;
+  }
+}
+.menu__order__button {
+  position: relative;
+  font-size: 1rem;
+  width: 220px;
+  height: 50px;
+  border-radius: 30px;
+  color: white;
+  border: none;
+  height: 50px;
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.99) 31%, rgba(255, 121, 218, 0.99) 100%);
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 2px #CCD1D1;
+  z-index: 1;
+}
+.menu__order__button:hover {
+  background: linear-gradient(0deg, #9356dc 31%, #ff79da 100%);
+  box-shadow: 3px 3px 3px 3px #CCD1D1;
+}
+.menu__order__button:hover::after {
+  opacity: 1;
+}
+.menu__order__button::after {
+  content: "";
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(0deg, #a16be0 31%, #ff93e1 100%);
+  opacity: 0;
+  z-index: -1;
+}
+
+/*# sourceMappingURL=style.css.map */
