@@ -481,6 +481,11 @@ footer a {
   height: 100%;
   align-items: center;
 }
+@media (max-width: 300px) {
+  .header__restaurant i {
+    position: static;
+  }
+}
 
 /* banner */
 .banner {
@@ -677,6 +682,15 @@ footer a {
   font-size: 1.2rem;
   width: 300px;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: text-overflow 500ms;
+}
+@media (max-width: 300px) {
+  .menu__type__class__button__more h4 {
+    width: 100%;
+  }
 }
 .menu__type__class__button__more__description {
   width: 100%;

@@ -3,7 +3,8 @@
     display: flex; 
    justify-content: center;
    position: relative;
-   margin: 20px 0px; 
+   margin: 20px 0px;
+   
    &__arrow { 
        color: black; 
    }
@@ -12,7 +13,11 @@
        top: 0px; 
        left: 50px; 
        height: 100%; 
-       align-items: center;
+       align-items: center;;
+       @media(max-width: 300px){
+           position: static; 
+
+       }
        
    } 
 
