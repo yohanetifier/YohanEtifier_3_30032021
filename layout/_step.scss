@@ -9,12 +9,17 @@
         justify-content: space-around; 
         margin-top: 30px; 
         &__step { 
+            justify-content: center; 
+            align-items: center; 
             display: flex; 
             margin-bottom: 30px; 
             background: #F2F4F4; 
             padding: 20px 40px;  
             border-radius: 20px; 
             position: relative; 
+            @media (max-width: 300px){ 
+                width: 150px; 
+            }
             &__number{ 
                 position: relative; 
                 right: 50px;

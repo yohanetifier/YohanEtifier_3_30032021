@@ -81,8 +81,8 @@
   z-index: 50;
   height: 100%;
   width: 100%;
-  -webkit-animation: loading-page-stop 3000ms 200ms both running cubic-bezier(0.37, 0.93, 1, 0.97) 1;
-          animation: loading-page-stop 3000ms 200ms both running cubic-bezier(0.37, 0.93, 1, 0.97) 1;
+  -webkit-animation: loading-page-stop 3000ms 200ms both  cubic-bezier(0.37, 0.93, 1, 0.97) 1;
+          animation: loading-page-stop 3000ms 200ms both  cubic-bezier(0.37, 0.93, 1, 0.97) 1;
 }
 .loader__spinner {
   -webkit-animation: loading-page 3000ms 1;

@@ -99,6 +99,11 @@ header img {
   text-align: center;
   margin-top: 10px;
 }
+@media (max-width: 300px) {
+  .discovery__paragraph {
+    width: 150px;
+  }
+}
 .discovery__button {
   position: relative;
   font-size: 1rem;
@@ -144,12 +149,19 @@ header img {
   margin-top: 30px;
 }
 .step__container__step {
+  justify-content: center;
+  align-items: center;
   display: flex;
   margin-bottom: 30px;
   background: #F2F4F4;
   padding: 20px 40px;
   border-radius: 20px;
   position: relative;
+}
+@media (max-width: 300px) {
+  .step__container__step {
+    width: 150px;
+  }
 }
 .step__container__step__number {
   position: relative;
@@ -769,4 +781,4 @@ footer a {
   z-index: -1;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=_style.css.map */
